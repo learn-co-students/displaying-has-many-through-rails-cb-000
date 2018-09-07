@@ -8,7 +8,7 @@
 3. Iterate over associations in a view and display associated data for a primary instance.
 4. Identify the join model in a has many through.
 
-## Overview
+## Overview--
 
 We've seen how we can use simple associations to display data to our users in Rails, but what about more complex relationships? Lucky for us, the interface for displaying this type of data is just as easy thanks to Active Record and `has_many, through`.
 
@@ -29,7 +29,7 @@ Things get slightly more complicated when we talk about the relationship between
     <td> post_id </td>
     <td> user_id </td>
   </tr>
-  
+
   <tr>
     <td> 1 </td>
     <td> "I loved this post!" </td>
