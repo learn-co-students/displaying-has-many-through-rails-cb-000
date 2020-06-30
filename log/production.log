@@ -1,0 +1,22 @@
+D, [2020-06-30T09:12:35.307054 #13035] DEBUG -- :   [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+D, [2020-06-30T09:12:35.322937 #13035] DEBUG -- :   [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-06-30T09:12:35.330060 #13035] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+I, [2020-06-30T09:12:35.332591 #13035]  INFO -- : Migrating to CreateUsers (20160114212908)
+D, [2020-06-30T09:12:35.333908 #13035] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-06-30T09:12:35.334762 #13035] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-06-30T09:12:35.336614 #13035] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160114212908"]]
+D, [2020-06-30T09:12:35.386594 #13035] DEBUG -- :   [1m[35m (49.8ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-06-30T09:12:35.386776 #13035]  INFO -- : Migrating to CreatePosts (20160114213006)
+D, [2020-06-30T09:12:35.387414 #13035] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-06-30T09:12:35.388470 #13035] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-06-30T09:12:35.389555 #13035] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160114213006"]]
+D, [2020-06-30T09:12:35.406537 #13035] DEBUG -- :   [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+I, [2020-06-30T09:12:35.406662 #13035]  INFO -- : Migrating to CreateComments (20160114213039)
+D, [2020-06-30T09:12:35.407264 #13035] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-06-30T09:12:35.408151 #13035] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "user_id" integer, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-06-30T09:12:35.409227 #13035] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160114213039"]]
+D, [2020-06-30T09:12:35.423703 #13035] DEBUG -- :   [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-06-30T09:12:35.425424 #13035] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-06-30T09:12:35.427924 #13035] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-06-30T09:12:35.429046 #13035] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "production"], ["created_at", "2020-06-30 09:12:35.428149"], ["updated_at", "2020-06-30 09:12:35.428149"]]
+D, [2020-06-30T09:12:35.438976 #13035] DEBUG -- :   [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
